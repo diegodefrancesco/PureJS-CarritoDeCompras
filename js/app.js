@@ -79,3 +79,40 @@ function carritoHTML(){
         contenedorCarrito.appendChild(row);
     })
 }
+
+
+// Cargar HTML
+
+let titulosDeCursos = [
+    'HTML5, CSS3, JavaScript para Principiantes',
+    'Curso de Comida Vegetariana',
+    'Guitarra para Principiantes',
+    'Huerto en tu casa',
+    'Decoración con productos de tu hogar',
+    'Diseño Web para Principiantes'
+];
+
+let fila = document.querySelectorAll('#lista-cursos .row');
+
+let index = 0;
+
+for(let i = 0; i<2; i++){
+    fila[i].innerHTML = '';
+    for (let j = 0; j < 3; j++) {
+        fila[i].innerHTML += `
+        <div class="four columns">
+        <div class="card">
+            <img src="img/curso1.jpg" class="imagen-curso u-full-width">
+            <div class="info-card">
+                <h4>${titulosDeCursos[index]}</h4>
+                <p>Juan Pedro</p>
+                <img src="img/estrellas.png">
+                <p class="precio">$200  <span class="u-pull-right ">$15</span></p>
+                <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="1">Agregar Al Carrito</a>
+            </div>
+        </div> <!--.card-->
+        </div>
+        `;
+        index++;
+    }
+};
